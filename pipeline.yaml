@@ -5,7 +5,9 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:Test
+    pool:
+      name: Test
+      vmImage: 'windows-latest'
     steps:  
     - task: azure-cosmosdb.emulator-public-preview.run-cosmosdbemulatorcontainer.CosmosDbEmulator@2
       displayName: 'Run Azure Cosmos DB Emulator'
