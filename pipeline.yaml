@@ -7,12 +7,3 @@ stages:
     displayName: Build
     pool:
       vmImage: windows-latest
-      
-    - task: DotNetCoreCLI@2
-      displayName: 'dotnet test'
-      inputs:
-        command: 'test'
-        projects: 'src/UnitTests/*.csproj'
-        arguments: '--collect "XPlat Code coverage"'
-
-    
