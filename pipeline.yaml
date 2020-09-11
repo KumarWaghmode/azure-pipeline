@@ -9,4 +9,10 @@ stages:
       vmImage: windows-latest
     steps:  
     - task: azure-cosmosdb.emulator-public-preview.run-cosmosdbemulatorcontainer.CosmosDbEmulator@2
-      displayName: 'Run Azure Cosmos DB Emulator'    
+      displayName: 'Run Azure Cosmos DB Emulator'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          Get-CosmosDbEmulatorStatus
+        pwsh: true   
